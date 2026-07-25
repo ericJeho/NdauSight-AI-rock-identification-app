@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  
+  <defs>
+    <linearGradient id="gBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#28353F"/>
+      <stop offset="1" stop-color="#161C24"/>
+    </linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0D26B"/>
+      <stop offset="1" stop-color="#C9A227"/>
+    </linearGradient>
+    <linearGradient id="gGoldV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F0D26B"/>
+      <stop offset="1" stop-color="#A8801A"/>
+    </linearGradient>
+    <radialGradient id="gGlow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#C9A227" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#C9A227" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#gBg)"/>
+  <circle cx="512" cy="512" r="380" fill="url(#gGlow)"/>
+  
+  <g>
+    <!-- soft ground shadow -->
+    <ellipse cx="512" cy="762" rx="150" ry="26" fill="#000000" opacity="0.28"/>
+
+    <!-- termination (three triangular facets meeting at the apex) -->
+    <polygon points="432,424 478,424 512,300" fill="#A8801A"/>
+    <polygon points="478,424 546,424 512,300" fill="url(#gGold)"/>
+    <polygon points="546,424 592,424 512,300" fill="#D4AF37"/>
+
+    <!-- body: three vertical faces -->
+    <polygon points="432,424 478,424 478,706 432,706" fill="#A8801A"/>
+    <polygon points="478,424 546,424 546,706 512,742 478,706" fill="url(#gGoldV)"/>
+    <polygon points="546,424 592,424 592,706 546,706" fill="#C9A227"/>
+
+    <!-- specular highlight on the centre facet -->
+    <polygon points="488,438 512,438 512,666 512,712"
+             fill="#FFFFFF" opacity="0.16"/>
+
+    <!-- crisp facet edges -->
+    <g stroke="#6E540E" stroke-width="5" stroke-linejoin="round" fill="none" opacity="0.55">
+      <polygon points="432,424 592,424 592,706 546,706 512,742 478,706 432,706"/>
+      <polyline points="432,424 512,300 592,424"/>
+      <line x1="478" y1="424" x2="512" y2="300"/>
+      <line x1="546" y1="424" x2="512" y2="300"/>
+      <line x1="478" y1="424" x2="478" y2="706"/>
+      <line x1="546" y1="424" x2="546" y2="706"/>
+    </g>
+
+    <!-- AI scan reticle: four corner brackets framing the crystal -->
+    <g stroke="#E6C866" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.9">
+      <path d="M320 372 L320 320 L372 320"/>
+      <path d="M704 320 L756 320 L756 372"/>
+      <path d="M320 700 L320 752 L372 752"/>
+      <path d="M704 752 L756 752 L756 700"/>
+    </g>
+  </g>
+</svg>
